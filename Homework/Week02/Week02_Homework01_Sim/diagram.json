@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "author": "HAO CRT",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -0.27, "left": 0.27, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 15.8,
+      "left": 220.8,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 32.75,
+      "left": 144,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "esp:D23", "btn1:1.l", "gold", [ "h0" ] ],
+    [ "r1:2", "btn1:1.l", "black", [ "v0" ] ],
+    [ "r1:1", "esp:GND.1", "black", [ "v0" ] ],
+    [ "btn1:2.r", "esp:3V3", "#8f4814", [ "h22.05", "v116.19" ] ]
+  ],
+  "dependencies": {}
+}
